@@ -40,6 +40,7 @@ document.querySelector('.check').addEventListener('click', function () {
         '.label-highscore'
       ).textContent = `🥇 Highscore: ${highScore}`;
     }
+    document.getElementById('.check').disabled = true;
   } else if (GuessNumber > randomNumber) {
     checkZero(score);
     document.querySelector(
@@ -62,4 +63,5 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.number').textContent = '?';
   document.querySelector('.message').textContent = 'Start guessing...';
   document.querySelector('.label-score').textContent = '💯 Score:';
+  document.querySelector('.guess').textContent = '';
 });
