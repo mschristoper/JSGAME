@@ -10,7 +10,8 @@
 let randomNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highScore = 0;
-
+let name = '';
+name = prompt('Enter your name');
 function checkhighscore(score, highScore) {}
 
 function checkZero(score) {
@@ -38,7 +39,7 @@ document.querySelector('.check').addEventListener('click', function () {
       highScore = score;
       document.querySelector(
         '.label-highscore'
-      ).textContent = `🥇 Highscore: ${highScore}`;
+      ).textContent = `🥇 Highscore:  ${name} ${highScore}`;
     }
     document.getElementById('.check').disabled = true;
   } else if (GuessNumber > randomNumber) {
@@ -56,12 +57,14 @@ document.querySelector('.check').addEventListener('click', function () {
 });
 
 document.querySelector('.again').addEventListener('click', function () {
+  name = prompt('Enter your name');
+
   randomNumber = Math.trunc(Math.random() * 20) + 1;
   score = 20;
+  document.querySelector('.guess').textContent = '?';
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').style.width = '15rem';
   document.querySelector('.number').textContent = '?';
   document.querySelector('.message').textContent = 'Start guessing...';
   document.querySelector('.label-score').textContent = '💯 Score:';
-  document.querySelector('.guess').textContent = '';
 });
