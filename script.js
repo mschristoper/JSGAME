@@ -23,6 +23,11 @@ function checkZero(score) {
   }
 }
 
+
+if (!(len(name) > 0)){
+    prompt('Please Enter a Name')
+}
+else{
 document.querySelector('.check').addEventListener('click', function () {
   let GuessNumber = Number(document.querySelector('.guess').value);
 
@@ -55,7 +60,7 @@ document.querySelector('.check').addEventListener('click', function () {
     ).textContent = `💯 Score ${(score -= 1)}`;
   }
 });
-
+}
 document.querySelector('.again').addEventListener('click', function () {
   name = prompt('Enter your name');
 
